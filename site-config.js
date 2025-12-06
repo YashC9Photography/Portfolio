@@ -10,15 +10,15 @@
 const siteConfig = {
     // 1. BRANDING
     brand: {
-        name: "Lumina Lens",
+        name: "Yash Photography",
         tagline: "Capturing Your Story, One Frame at a Time.",
-        logoText: "LUMINA",
-        email: "contact@luminalens.com",
-        phone: "+1 (555) 019-2834",
+        logoText: "YASH",
+        email: "cyashchowdhuryc9@gmail.com",
+        phone: "+916294979124",
         // Social Media Links (leave empty '' if not using)
         social: {
-            instagram: "https://instagram.com",
-            facebook: "https://facebook.com",
+            instagram: "https://www.instagram.com/yash__c9?igsh=NWVqeHhvOWl1bHM=",
+            facebook: "https://www.facebook.com/share/1DAZ4cwHHK/",
             youtube: "https://youtube.com"
         }
     },
@@ -122,4 +122,5 @@ const siteConfig = {
         { name: "TechCorp Inc.", text: "Professional, timely, and the photos elevated our brand significantly." },
         { name: "Mike & Alisha", text: "The best investment we made for our wedding. Highly recommended." }
     ]
+
 };
