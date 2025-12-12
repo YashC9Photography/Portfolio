@@ -18,16 +18,18 @@ function loadContent() {
     } else {
         logoContainer.textContent = config.brand.logoText;
     }
-// --- NEW HERO TITLE LOGIC STARTS HERE ---
-    // Instead of just textContent, we insert HTML to create the two lines
+
+    // --- NEW HERO TITLE LOGIC ---
     const heroTitle = document.getElementById('hero-title');
     heroTitle.innerHTML = `
         <span class="name-main">${config.hero.titleLine1}</span>
         <span class="name-sub">${config.hero.titleLine2}</span>
     `;
-    // --- NEW HERO TITLE LOGIC ENDS HERE ---
-    document.getElementById('hero-title').textContent = config.brand.name;
-    document.getElementById('hero-tagline').textContent = config.brand.tagline;
+    
+    // FIXED: We removed the lines that were overwriting the title above!
+    
+    // Use the tagline from the HERO config, not the brand config
+    document.getElementById('hero-tagline').textContent = config.hero.tagline; 
     document.getElementById('hero-btn').textContent = config.hero.buttonText;
     document.querySelector('.hero-section').style.backgroundImage = `url('${config.hero.backgroundImage}')`;
     
@@ -36,6 +38,8 @@ function loadContent() {
     document.getElementById('about-bio').textContent = config.about.bio;
     
     const statsContainer = document.getElementById('about-stats');
+    // Clear existing stats to prevent duplicates if function runs twice
+    statsContainer.innerHTML = ''; 
     config.about.stats.forEach(stat => {
         const span = document.createElement('span');
         span.className = 'stat-item';
@@ -45,6 +49,7 @@ function loadContent() {
 
     // 3. SERVICES
     const servicesGrid = document.getElementById('services-grid');
+    servicesGrid.innerHTML = ''; // Clear existing
     config.services.forEach(service => {
         const card = document.createElement('div');
         card.className = 'service-card';
@@ -61,6 +66,7 @@ function loadContent() {
 
     // 4. PORTFOLIO
     const galleryGrid = document.getElementById('gallery-grid');
+    galleryGrid.innerHTML = ''; // Clear existing
     config.portfolio.forEach(item => {
         const imgDiv = document.createElement('div');
         imgDiv.className = `gallery-item ${item.category}`;
@@ -70,6 +76,7 @@ function loadContent() {
 
     // 5. TESTIMONIALS
     const testimonialGrid = document.getElementById('testimonials-grid');
+    testimonialGrid.innerHTML = ''; // Clear existing
     config.testimonials.forEach(t => {
         const div = document.createElement('div');
         div.className = 'testimonial-card';
@@ -85,6 +92,7 @@ function loadContent() {
     
     // Social Links Injection
     const socialContainer = document.getElementById('social-links');
+    socialContainer.innerHTML = ''; // Clear existing
     if(config.brand.social.instagram) socialContainer.innerHTML += `<a href="${config.brand.social.instagram}" target="_blank" style="margin-right:10px"><i class="fab fa-instagram fa-2x"></i></a>`;
     if(config.brand.social.facebook) socialContainer.innerHTML += `<a href="${config.brand.social.facebook}" target="_blank" style="margin-right:10px"><i class="fab fa-facebook fa-2x"></i></a>`;
     if(config.brand.social.youtube) socialContainer.innerHTML += `<a href="${config.brand.social.youtube}" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>`;
@@ -150,4 +158,5 @@ function setupMobileMenu() {
         });
     });
 }
+
 
