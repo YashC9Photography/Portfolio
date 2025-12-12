@@ -12,7 +12,7 @@ const siteConfig = {
     brand: {
         name: "Yash Photography",
         tagline: "Capturing Your Story, One Frame at a Time.",
-        logoImage: "logo.png",
+        logoImage: "LOGOW.png",
         logoText: "YASH",
         email: "yashchowdhuryc9@gmail.com",
         phone: "+916294979124",
@@ -125,5 +125,6 @@ const siteConfig = {
     ]
 
 };
+
 
 
