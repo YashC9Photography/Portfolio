@@ -1,8 +1,8 @@
-// Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
     loadContent();
     setupGalleryFilters();
     setupLightbox();
+    setupMobileMenu(); // <--- NEW FUNCTION ADDED
 });
 
 function loadContent() {
@@ -10,14 +10,15 @@ function loadContent() {
 
     // 1. BRANDING & HERO
     document.title = `${config.brand.name} - Portfolio`;
-  //  document.getElementById('nav-logo').textContent = config.brand.logoText; 12/12/2025
-    // Check if a logo image exists in config, otherwise use text 12/12/2025
+    
+    // UPDATED LOGO LOGIC
     const logoContainer = document.getElementById('nav-logo');
     if (config.brand.logoImage) {
         logoContainer.innerHTML = `<img src="${config.brand.logoImage}" alt="Logo">`;
     } else {
         logoContainer.textContent = config.brand.logoText;
     }
+
     document.getElementById('hero-title').textContent = config.brand.name;
     document.getElementById('hero-tagline').textContent = config.brand.tagline;
     document.getElementById('hero-btn').textContent = config.hero.buttonText;
@@ -74,6 +75,12 @@ function loadContent() {
     document.getElementById('contact-phone').textContent = `Phone: ${config.brand.phone}`;
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('footer-name').textContent = config.brand.name;
+    
+    // Social Links Injection
+    const socialContainer = document.getElementById('social-links');
+    if(config.brand.social.instagram) socialContainer.innerHTML += `<a href="${config.brand.social.instagram}" target="_blank" style="margin-right:10px"><i class="fab fa-instagram fa-2x"></i></a>`;
+    if(config.brand.social.facebook) socialContainer.innerHTML += `<a href="${config.brand.social.facebook}" target="_blank" style="margin-right:10px"><i class="fab fa-facebook fa-2x"></i></a>`;
+    if(config.brand.social.youtube) socialContainer.innerHTML += `<a href="${config.brand.social.youtube}" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>`;
 }
 
 // Gallery Filters
@@ -83,12 +90,9 @@ function setupGalleryFilters() {
 
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
             const filter = btn.getAttribute('data-filter');
-
             for (let item of items) {
                 if (filter === 'all' || item.classList.contains(filter)) {
                     item.style.display = 'block';
@@ -118,5 +122,24 @@ function setupLightbox() {
     lightbox.onclick = (e) => {
         if(e.target === lightbox) lightbox.style.display = "none";
     }
+}
 
+// Mobile Menu Logic (NEW)
+function setupMobileMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links li');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('toggle');
+    });
+
+    // Close menu when a link is clicked
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('toggle');
+        });
+    });
 }
