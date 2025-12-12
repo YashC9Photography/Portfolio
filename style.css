@@ -46,7 +46,21 @@ img { max-width: 100%; display: block; object-fit: cover; }
     background: rgba(18, 18, 18, 0.95); z-index: 1000;
 }
 .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); z-index: 1001; }
-.logo img { height: 40px; width: auto; } /* Logo size fix */
+/*.logo img { height: 40px; width: auto; } /* Logo size fix */
+/* --- style.css --- */
+
+/* 1. Find the .logo class around line 45 */
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); z-index: 1001; }
+
+/* 2. PASTE THIS NEW DYNAMIC CSS BELOW IT: */
+
+/* Desktop Size (Default) */
+.logo img {
+    height: 55px; /* Nice and big on large screens */
+    width: auto;  /* Maintains aspect ratio */
+    display: block; /* Removes extra space below image */
+    transition: height 0.3s ease; /* Smooth resize animation */
+}
 
 .nav-links { display: flex; list-style: none; gap: 30px; }
 .nav-links a:hover { color: var(--primary-color); }
@@ -131,7 +145,10 @@ footer { text-align: center; padding: 20px; background: #000; color: #666; font-
 @media (max-width: 768px) {
     .section { padding: 50px 0; }
     .section-title { font-size: 2rem; margin-bottom: 30px; }
-    
+    /* Mobile/Tablet Size */
+    .logo img {
+        height: 35px; /* Shrinks down to fit nicely on smaller headers */
+    }
     /* 1. Hamburger Menu Logic */
     .hamburger { display: block; }
     .nav-links {
@@ -166,3 +183,4 @@ footer { text-align: center; padding: 20px; background: #000; color: #666; font-
     .btn-primary { width: 100%; text-align: center; }
     .navbar { padding: 15px 20px; }
 }
+
