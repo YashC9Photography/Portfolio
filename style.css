@@ -204,4 +204,26 @@ footer { text-align: center; padding: 20px; background: #000; color: #666; font-
     .navbar { padding: 15px 20px; }
 }
 
+/* --- Social Media Icons Fix --- */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.social-links a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.social-links i {
+    color: var(--primary-color); /* Makes them Gold */
+    font-size: 2rem; /* Makes them Big (32px) */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links i:hover {
+    color: white; /* Turns white when you hover */
+    transform: translateY(-5px); /* Floats up slightly */
+}
 
