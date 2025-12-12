@@ -12,7 +12,7 @@ const siteConfig = {
     brand: {
         name: "Yash Chowdhury",
        // tagline: "Capturing Your Story, One Frame at a Time.",
-        logoImage: "LOGOW.png",
+        logoImage: "LOGOW3.png",
         logoText: "YASH",
         email: "yashchowdhuryc9@gmail.com",
         phone: "+916294979124",
@@ -135,6 +135,7 @@ const siteConfig = {
     ]
 
 };
+
 
 
 
