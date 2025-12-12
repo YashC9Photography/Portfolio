@@ -12,8 +12,9 @@ const siteConfig = {
     brand: {
         name: "Yash Photography",
         tagline: "Capturing Your Story, One Frame at a Time.",
+        logoImage: "logo.png",
         logoText: "YASH",
-        email: "cyashchowdhuryc9@gmail.com",
+        email: "yashchowdhuryc9@gmail.com",
         phone: "+916294979124",
         // Social Media Links (leave empty '' if not using)
         social: {
@@ -34,7 +35,7 @@ const siteConfig = {
     about: {
         title: "Behind the Lens",
         // Place a portrait named 'profile.jpg' in your folder
-        image: "hi.png",
+        image: "Yash.jpeg",
         bio: "I am an enthusiastic photographer passionate about storytelling through images. My style blends cinematic flair with candid emotion. Whether it's the roar of a music festival or the quiet intimacy of a wedding, I am there to capture the moment perfectly.",
         stats: ["5+ Years Experience", "200+ Projects", "Cinematic Style"]
     },
@@ -124,4 +125,5 @@ const siteConfig = {
     ]
 
 };
+
 
