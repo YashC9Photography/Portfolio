@@ -10,8 +10,8 @@
 const siteConfig = {
     // 1. BRANDING
     brand: {
-        name: "Yash Photography",
-        tagline: "Capturing Your Story, One Frame at a Time.",
+        name: "Yash Chowdhury",
+       // tagline: "Capturing Your Story, One Frame at a Time.",
         logoImage: "LOGOW.png",
         logoText: "YASH",
         email: "yashchowdhuryc9@gmail.com",
@@ -26,8 +26,18 @@ const siteConfig = {
 
     // 2. HERO SECTION
     hero: {
+        // Line 1: Big Name
+        titleLine1: "YASH CHOWDHURY", 
+        // Line 2: Small Text
+        titleLine2: "PHOTOGRAPHY",
+        
+        // New Creative Tagline (Option A)
+        //tagline: "Visual Poetry in Every Frame.",
+        // (Alternative options you can copy-paste if you prefer):
+        /tagline: "Crafting Timeless Moments.",
+        // tagline: "Where Life Meets Light.",
         // Place a high-res image named 'hero.jpg' in your folder
-        backgroundImage: "club.jpeg", 
+        backgroundImage: "club2.jpeg", 
         buttonText: "Book a Shoot"
     },
 
@@ -125,6 +135,7 @@ const siteConfig = {
     ]
 
 };
+
 
 
 
