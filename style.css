@@ -56,7 +56,7 @@ img { max-width: 100%; display: block; object-fit: cover; }
 
 /* Desktop Size (Default) */
 .logo img {
-    height: 55px; /* Nice and big on large screens */
+    height: 100px; /* Nice and big on large screens */
     width: auto;  /* Maintains aspect ratio */
     display: block; /* Removes extra space below image */
     transition: height 0.3s ease; /* Smooth resize animation */
@@ -84,7 +84,25 @@ img { max-width: 100%; display: block; object-fit: cover; }
 .hero-content { position: relative; z-index: 1; }
 .hero-content h1 { font-size: 4rem; margin-bottom: 10px; line-height: 1.2; }
 .hero-content p { font-size: 1.5rem; margin-bottom: 30px; font-weight: 300; }
+/* New Two-Line Title Styles */
+.name-main {
+    display: block;
+    font-size: 4.5rem; /* Big and bold */
+    font-weight: 700;
+    line-height: 1.1;
+    color: #ffffff;
+}
 
+.name-sub {
+    display: block;
+    font-size: 1.2rem; /* Much smaller */
+    font-family: var(--font-body); /* Clean sans-serif font */
+    letter-spacing: 8px; /* Wide spacing for elegance */
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--primary-color); /* Gold accent color */
+    margin-top: 10px;
+}
 /* About */
 .about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 .about-img img { width: 100%; border-radius: 5px; filter: grayscale(20%); }
@@ -145,9 +163,11 @@ footer { text-align: center; padding: 20px; background: #000; color: #666; font-
 @media (max-width: 768px) {
     .section { padding: 50px 0; }
     .section-title { font-size: 2rem; margin-bottom: 30px; }
+    .name-main { font-size: 2.8rem; }
+    .name-sub { font-size: 0.9rem; letter-spacing: 4px; }
     /* Mobile/Tablet Size */
     .logo img {
-        height: 35px; /* Shrinks down to fit nicely on smaller headers */
+        height: 65px; /* Shrinks down to fit nicely on smaller headers */
     }
     /* 1. Hamburger Menu Logic */
     .hamburger { display: block; }
@@ -183,4 +203,5 @@ footer { text-align: center; padding: 20px; background: #000; color: #666; font-
     .btn-primary { width: 100%; text-align: center; }
     .navbar { padding: 15px 20px; }
 }
+
 
