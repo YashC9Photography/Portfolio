@@ -34,7 +34,7 @@ const siteConfig = {
         // New Creative Tagline (Option A)
         //tagline: "Visual Poetry in Every Frame.",
         // (Alternative options you can copy-paste if you prefer):
-        /tagline: "Crafting Timeless Moments.",
+        tagline: "Crafting Timeless Moments.",
         // tagline: "Where Life Meets Light.",
         // Place a high-res image named 'hero.jpg' in your folder
         backgroundImage: "club2.jpeg", 
@@ -135,6 +135,7 @@ const siteConfig = {
     ]
 
 };
+
 
 
 
