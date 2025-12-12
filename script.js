@@ -18,7 +18,14 @@ function loadContent() {
     } else {
         logoContainer.textContent = config.brand.logoText;
     }
-
+// --- NEW HERO TITLE LOGIC STARTS HERE ---
+    // Instead of just textContent, we insert HTML to create the two lines
+    const heroTitle = document.getElementById('hero-title');
+    heroTitle.innerHTML = `
+        <span class="name-main">${config.hero.titleLine1}</span>
+        <span class="name-sub">${config.hero.titleLine2}</span>
+    `;
+    // --- NEW HERO TITLE LOGIC ENDS HERE ---
     document.getElementById('hero-title').textContent = config.brand.name;
     document.getElementById('hero-tagline').textContent = config.brand.tagline;
     document.getElementById('hero-btn').textContent = config.hero.buttonText;
@@ -143,3 +150,4 @@ function setupMobileMenu() {
         });
     });
 }
+
