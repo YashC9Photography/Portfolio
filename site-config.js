@@ -12,7 +12,7 @@ const siteConfig = {
     brand: {
         name: "Yash Chowdhury",
        // tagline: "Capturing Your Story, One Frame at a Time.",
-        logoImage: "LOGOW3.png",
+        logoImage: "images/LOGOW3.png",
         logoText: "YASH",
         email: "yashchowdhuryc9@gmail.com",
         phone: "+916294979124",
@@ -37,7 +37,7 @@ const siteConfig = {
         tagline: "Crafting Timeless Moments.",
         // tagline: "Where Life Meets Light.",
         // Place a high-res image named 'hero.jpg' in your folder
-        backgroundImage: "club2.jpeg", 
+        backgroundImage: "images/club2.jpeg", 
         buttonText: "Book a Shoot"
     },
 
@@ -45,7 +45,7 @@ const siteConfig = {
     about: {
         title: "Behind the Lens",
         // Place a portrait named 'profile.jpg' in your folder
-        image: "Yash.jpeg",
+        image: "images/Yash.jpeg",
         bio: "I am an enthusiastic photographer passionate about storytelling through images. My style blends cinematic flair with candid emotion. Whether it's the roar of a music festival or the quiet intimacy of a wedding, I am there to capture the moment perfectly.",
         stats: ["7+ Years Experience", "700+ Projects", "Cinematic Style"]
     },
@@ -56,13 +56,13 @@ const siteConfig = {
         {
             title: "Wedding Photography",
             desc: "Capturing the magic of your special day with cinematic storytelling.",
-            image: "weeding.jpeg",
+            image: "images/weeding.jpeg",
             price: "Contact for Quote"
         },
         {
             title: "Pre-Wedding",
             desc: "Romantic and creative couples shoots before the big day.",
-            image: "preweeding.png",
+            image: "images/preweeding.png",
             price: "Contact for Quote"
         },
 //        {
@@ -74,19 +74,19 @@ const siteConfig = {
         {
             title: "Interior",
             desc: "High-end real estate and architectural photography.",
-            image: "interior.jpeg",
+            image: "images/interior.jpeg",
             price: "Contact for Quote"
         },
         {
             title: "Food Photography",
             desc: "Mouth-watering styling and photography for menus and social.",
-            image: "food.jpeg",
+            image: "images/food.jpeg",
             price: "Contact for Quote"
         },
         {
             title: "Portrait",
             desc: "Creative personal branding, fashion, and lifestyle portraits.",
-            image: "protaitSayantika.jpeg",
+            image: "images/protaitSayantika.jpeg",
             price: "Contact for Quote"
         },
  //       {
@@ -98,7 +98,7 @@ const siteConfig = {
         {
             title: "Music Festival",
             desc: "High-energy coverage of live performances and crowds.",
-            image: "music event.jpeg",
+            image: "images/music event.jpeg",
             price: "Day Rates Available"
         },
       //  {
@@ -110,7 +110,7 @@ const siteConfig = {
         {
             title: "Birthday",
             desc: "Documenting parties and milestones with fun and flair.",
-            image: "birthday.jpeg",
+            image: "images/birthday.jpeg",
             price: "Contact for Quote"
         }
     ],
@@ -119,12 +119,12 @@ const siteConfig = {
     // Add your best shots here. Category must match the filter buttons.
     // Categories: 'wedding', 'portrait', 'events', 'commercial'
     portfolio: [
-        { src: "weeding.jpeg", category: "wedding" },
-        { src: "protait.jpeg", category: "portrait" },
-        { src: "event.jpeg", category: "events" },
+        { src: "images/weeding.jpeg", category: "wedding" },
+        { src: "images/protait.jpeg", category: "portrait" },
+        { src: "images/event.jpeg", category: "events" },
        // { src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800", category: "commercial" },
-        { src: "weeding2.jpeg", category: "wedding" },
-        { src: "event2.jpeg", category: "events" },
+        { src: "images/weeding2.jpeg", category: "wedding" },
+        { src: "images/event2.jpeg", category: "events" },
     ],
 
     // 6. TESTIMONIALS
@@ -135,6 +135,7 @@ const siteConfig = {
     ]
 
 };
+
 
 
 
