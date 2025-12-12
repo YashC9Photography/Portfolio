@@ -10,7 +10,14 @@ function loadContent() {
 
     // 1. BRANDING & HERO
     document.title = `${config.brand.name} - Portfolio`;
-    document.getElementById('nav-logo').textContent = config.brand.logoText;
+  //  document.getElementById('nav-logo').textContent = config.brand.logoText; 12/12/2025
+    // Check if a logo image exists in config, otherwise use text 12/12/2025
+    const logoContainer = document.getElementById('nav-logo');
+    if (config.brand.logoImage) {
+        logoContainer.innerHTML = `<img src="${config.brand.logoImage}" alt="Logo">`;
+    } else {
+        logoContainer.textContent = config.brand.logoText;
+    }
     document.getElementById('hero-title').textContent = config.brand.name;
     document.getElementById('hero-tagline').textContent = config.brand.tagline;
     document.getElementById('hero-btn').textContent = config.hero.buttonText;
@@ -111,4 +118,5 @@ function setupLightbox() {
     lightbox.onclick = (e) => {
         if(e.target === lightbox) lightbox.style.display = "none";
     }
+
 }
