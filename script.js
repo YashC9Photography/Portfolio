@@ -64,24 +64,41 @@ function loadContent() {
         servicesGrid.appendChild(card);
     });
 
-    // 4. PORTFOLIO
-    const galleryGrid = document.getElementById('gallery-grid');
-    galleryGrid.innerHTML = ''; // Clear existing
-    config.portfolio.forEach(item => {
-        const imgDiv = document.createElement('div');
-        imgDiv.className = `gallery-item ${item.category}`;
-        imgDiv.innerHTML = `<img src="${item.src}" alt="Portfolio Image">`;
-        galleryGrid.appendChild(imgDiv);
-    });
+    // 4. PORTFOLIO SLIDESHOW (AUTO-LOADER)
+    const track = document.getElementById('gallery-track');
+    track.innerHTML = ''; // Clear existing
+    
+    // --- CONFIGURATION ---
+    const folderName = "gallery";  // Your folder name on GitHub
+    const totalPhotos = 11;        // <--- CHANGE THIS to the actual number of photos you have!
+    const fileExtension = ".jpeg";  // Change to ".png" if needed
+    // ---------------------
 
-    // 5. TESTIMONIALS
-    const testimonialGrid = document.getElementById('testimonials-grid');
-    testimonialGrid.innerHTML = ''; // Clear existing
-    config.testimonials.forEach(t => {
-        const div = document.createElement('div');
-        div.className = 'testimonial-card';
-        div.innerHTML = `"${t.text}" <span class="client-name">- ${t.name}</span>`;
-        testimonialGrid.appendChild(div);
+    // 1. Create a list of numbers: 1, 2, 3 ... totalPhotos
+    let photoList = [];
+    for(let i = 1; i <= totalPhotos; i++) {
+        photoList.push(`${folderName}/${i}${fileExtension}`);
+    }
+
+    // 2. Duplicate the list 2 times to ensure seamless infinite scrolling
+    const infiniteScrollList = [...photoList, ...photoList];
+
+    // 3. Create the HTML for each slide
+    infiniteScrollList.forEach(imageSrc => {
+        const slideDiv = document.createElement('div');
+        slideDiv.className = 'slide';
+        
+        // Lightbox Click Event (Opens full size)
+        slideDiv.onclick = () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightbox.style.display = "flex";
+            lightboxImg.src = imageSrc;
+        };
+        
+        // Inject Image (with Error handling to hide missing photos)
+        slideDiv.innerHTML = `<img src="${imageSrc}" alt="Gallery" onerror="this.parentElement.style.display='none'">`;
+        track.appendChild(slideDiv);
     });
 
     // 6. CONTACT & FOOTER
@@ -120,23 +137,22 @@ function setupGalleryFilters() {
 }
 
 // Lightbox Logic
+// Lightbox Logic (Closing Only)
 function setupLightbox() {
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.close-lightbox');
-    const galleryGrid = document.getElementById('gallery-grid');
 
-    galleryGrid.addEventListener('click', (e) => {
-        if(e.target.tagName === 'IMG') {
-            lightbox.style.display = "flex";
-            lightboxImg.src = e.target.src;
-        }
-    });
+    // Close when clicking the "X" button
+    closeBtn.onclick = () => {
+        lightbox.style.display = "none";
+    };
 
-    closeBtn.onclick = () => lightbox.style.display = "none";
+    // Close when clicking the dark background outside the image
     lightbox.onclick = (e) => {
-        if(e.target === lightbox) lightbox.style.display = "none";
-    }
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    };
 }
 
 // Mobile Menu Logic (NEW)
@@ -158,5 +174,4 @@ function setupMobileMenu() {
         });
     });
 }
-
 
