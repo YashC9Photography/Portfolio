@@ -50,12 +50,67 @@ const siteConfig = {
         stats: ["7+ Years Experience", "700+ Projects", "Cinematic Style"]
     },
 
-    // 4. SERVICES SECTION
-    // You can add or remove services here.
+    
+   // 4. SERVICES SECTION (Updated Order)
     services: [
         {
+            title: "Event Photography",
+            desc: "Capturing the energy and key moments of your special occasions.",
+            image: "images/event.jpeg", // Make sure you have this image
+            price: "Contact for Quote"
+        },
+        {
+            title: "Portfolio Shoots",
+            desc: "High-fashion and modeling portfolios to kickstart your career.",
+            image: "images/protait.jpeg", // Reusing portrait image
+            price: "Contact for Quote"
+        },
+       
+        {
+            title: "Interior & Architectural",
+            desc: "Showcasing spaces with perfect lighting and wide angles.",
+            image: "images/interior.jpeg", 
+            price: "Contact for Quote"
+        },
+        {
+            title: "Food Photography",
+            desc: "Mouth-watering styling and culinary art photography.",
+            image: "images/food.jpeg",
+            price: "Contact for Quote"
+        },
+        {
+            title: "Portrait Photography",
+            desc: "Creative personal branding, lifestyle, and artistic portraits.",
+            image: "images/protaitSayantika.jpeg",
+            price: "Contact for Quote"
+        },
+        {
+            title: "Studio Session",
+            desc: "Controlled lighting and professional backdrops for polished results.",
+            image: "images/protait.jpeg", // Placeholder
+            price: "Hourly Rates"
+        },
+         {
+            title: "Corporate Photography",
+            desc: "Professional headshots, branding, and office environment shots.",
+            image: "images/event2.jpeg", // Placeholder
+            price: "Contact for Quote"
+        },
+        {
+            title: "Music Festival & Concert",
+            desc: "High-energy coverage of live performances and crowds.",
+            image: "images/music event.jpeg",
+            price: "Day Rates Available"
+        },
+        {
+            title: "Music Video & Promo",
+            desc: "Behind the scenes (BTS) and promotional stills for artists.",
+            image: "images/event.jpeg", // Placeholder
+            price: "Contact for Quote"
+        },
+        {
             title: "Wedding Photography",
-            desc: "Capturing the magic of your special day with cinematic storytelling.",
+            desc: "Cinematic storytelling of your most special day.",
             image: "images/weeding.jpeg",
             price: "Contact for Quote"
         },
@@ -65,50 +120,8 @@ const siteConfig = {
             image: "images/preweeding.png",
             price: "Contact for Quote"
         },
-//        {
-//            title: "Corporate",
-//            desc: "Professional headshots and event coverage for businesses.",
-//            image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=600&auto=format&fit=crop",
-//            price: "Contact for Quote"
-//        },
         {
-            title: "Interior",
-            desc: "High-end real estate and architectural photography.",
-            image: "images/interior.jpeg",
-            price: "Contact for Quote"
-        },
-        {
-            title: "Food Photography",
-            desc: "Mouth-watering styling and photography for menus and social.",
-            image: "images/food.jpeg",
-            price: "Contact for Quote"
-        },
-        {
-            title: "Portrait",
-            desc: "Creative personal branding, fashion, and lifestyle portraits.",
-            image: "images/protaitSayantika.jpeg",
-            price: "Contact for Quote"
-        },
- //       {
-   //         title: "Studio Session",
-     //       desc: "Controlled lighting and backdrops for professional results.",
-       //     image: "https://images.unsplash.com/photo-1527011046414-4781f1f94f8c?q=80&w=600&auto=format&fit=crop",
-         //   price: "Hourly Rates"
-     //   },
-        {
-            title: "Music Festival",
-            desc: "High-energy coverage of live performances and crowds.",
-            image: "images/music event.jpeg",
-            price: "Day Rates Available"
-        },
-      //  {
-       //     title: "Music Video Promo",
-       //     desc: "Behind the scenes (BTS) and promotional stills for artists.",
-       //     image: "https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=600&auto=format&fit=crop",
-       //     price: "Contact for Quote"
-      //  },
-        {
-            title: "Birthday",
+            title: "Birthday Photography",
             desc: "Documenting parties and milestones with fun and flair.",
             image: "images/birthday.jpeg",
             price: "Contact for Quote"
