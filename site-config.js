@@ -57,74 +57,86 @@ const siteConfig = {
             title: "Event Photography",
             desc: "Capturing the energy and key moments of your special occasions.",
             image: "images/event.jpeg", // Make sure you have this image
-            price: "Contact for Quote"
+            price: "Contact for Quote",
+            folderName : "EVENT"
         },
         {
             title: "Portfolio Shoots",
             desc: "High-fashion and modeling portfolios to kickstart your career.",
-            image: "images/protait.jpeg", // Reusing portrait image
-            price: "Contact for Quote"
+            image: "images/portfolio.jpeg", // Reusing portrait image
+            price: "Contact for Quote",
+            folderName : "PORTFOLIO"
         },
        
         {
             title: "Interior & Architectural",
             desc: "Showcasing spaces with perfect lighting and wide angles.",
             image: "images/interior.jpeg", 
-            price: "Contact for Quote"
+            price: "Contact for Quote",
+            folderName : "INTERIOR"
         },
         {
             title: "Food Photography",
             desc: "Mouth-watering styling and culinary art photography.",
             image: "images/food.jpeg",
-            price: "Contact for Quote"
+            price: "Contact for Quote",
+            folderName : "FOOD"
         },
         {
             title: "Portrait Photography",
             desc: "Creative personal branding, lifestyle, and artistic portraits.",
             image: "images/protaitSayantika.jpeg",
-            price: "Contact for Quote"
+            price: "Contact for Quote",
+            folderName : "PORTRAIT"
         },
         {
             title: "Studio Session",
             desc: "Controlled lighting and professional backdrops for polished results.",
             image: "images/protait.jpeg", // Placeholder
-            price: "Hourly Rates"
+            price: "Hourly Rates",
+            folderName : "STUDIO"
         },
          {
             title: "Corporate Photography",
             desc: "Professional headshots, branding, and office environment shots.",
             image: "images/event2.jpeg", // Placeholder
-            price: "Contact for Quote"
+            price: "Contact for Quote",
+            folderName : "CORPORATE"
         },
         {
             title: "Music Festival & Concert",
             desc: "High-energy coverage of live performances and crowds.",
             image: "images/music event.jpeg",
-            price: "Day Rates Available"
+            price: "Day Rates Available",
+            folderName : "MUSIC"
         },
-        {
-            title: "Music Video & Promo",
-            desc: "Behind the scenes (BTS) and promotional stills for artists.",
-            image: "images/event.jpeg", // Placeholder
-            price: "Contact for Quote"
-        },
+        // {
+        //     title: "Music Video & Promo",
+        //     desc: "Behind the scenes (BTS) and promotional stills for artists.",
+        //     image: "images/event.jpeg", // Placeholder
+        //     price: "Contact for Quote"
+        // },
         {
             title: "Wedding Photography",
             desc: "Cinematic storytelling of your most special day.",
             image: "images/weeding.jpeg",
-            price: "Contact for Quote"
+            price: "Contact for Quote",
+            folderName : "WEDDING"
+
         },
         {
             title: "Pre-Wedding",
             desc: "Romantic and creative couples shoots before the big day.",
             image: "images/preweeding.png",
-            price: "Contact for Quote"
+            price: "Contact for Quote",
+            folderName : "PREWEDDING"
         },
         {
             title: "Birthday Photography",
             desc: "Documenting parties and milestones with fun and flair.",
             image: "images/birthday.jpeg",
-            price: "Contact for Quote"
+            price: "Contact for Quote",
+            folderName : "BIRTHDAY"
         }
     ],
 
