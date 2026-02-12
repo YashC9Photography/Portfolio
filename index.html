@@ -59,7 +59,7 @@
 
     <section id="portfolio" class="section">
         <div class="container">
-            <h2 class="section-title">My Gallery</h2>
+            <h2 class="section-title">Glimpses</h2>
         </div>
 
         <div class="slider-container">
@@ -116,7 +116,16 @@
             </div>
         </div>
     </section>
-
+<div id="service-modal" class="service-modal">
+        <div class="service-modal-header">
+            <h2 id="modal-title">Gallery</h2>
+            <span class="close-service-modal">&times;</span>
+        </div>
+        <div class="service-modal-content">
+            <div class="service-gallery-grid" id="service-gallery-grid">
+                </div>
+        </div>
+    </div>
     <footer>
         <p>&copy; <span id="year"></span> <span id="footer-name"></span>. Made with love & light.</p>
     </footer>
@@ -124,6 +133,8 @@
     <div id="lightbox" class="lightbox">
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img">
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
     </div>
 
     <script src="site-config.js"></script>
