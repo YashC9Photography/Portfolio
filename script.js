@@ -4,7 +4,113 @@ document.addEventListener('DOMContentLoaded', () => {
     setupLightbox();
     setupMobileMenu(); // <--- NEW FUNCTION ADDED
 });
+// --- LIGHTBOX NAVIGATION LOGIC ---
+function changeSlide(n) {
+    // 1. Update Index
+    currentLightboxIndex += n;
 
+    // 2. Loop Logic (Infinite Scroll)
+    if (currentLightboxIndex >= lightboxImages.length) {
+        currentLightboxIndex = 0; // Go back to first
+    } else if (currentLightboxIndex < 0) {
+        currentLightboxIndex = lightboxImages.length - 1; // Go to last
+    }
+
+    // 3. Update Image Source
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    // Add a fade effect
+    lightboxImg.style.opacity = 0;
+    setTimeout(() => {
+        lightboxImg.src = lightboxImages[currentLightboxIndex];
+        lightboxImg.style.opacity = 1;
+    }, 200);
+}
+
+// Enable Left/Right Arrow Keys on Keyboard
+document.addEventListener('keydown', (e) => {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowLeft") changeSlide(-1);
+        if (e.key === "ArrowRight") changeSlide(1);
+        if (e.key === "Escape") lightbox.style.display = "none";
+    }
+});
+// --- NEW SERVICE GALLERY LOGIC ---
+let currentLightboxIndex = 0;
+let lightboxImages = []; // Stores the list of photos currently being viewed
+function openServiceGallery(folderName, title) {
+    if (!folderName) {
+        alert("Gallery coming soon!");
+        return;
+    }
+
+    const modal = document.getElementById('service-modal');
+    const grid = document.getElementById('service-gallery-grid');
+    const titleEl = document.getElementById('modal-title');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    // Set Title
+    titleEl.textContent = title + " Gallery";
+    grid.innerHTML = ''; // Clear previous photos
+
+    // Show Modal
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Stop background scrolling
+
+    // LOADER LOOP: Try to load images 1 to 20
+    // Note: We check .jpg, .jpeg, and .png for flexibility
+    for (let i = 1; i <= 20; i++) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'service-photo-item';
+        
+        // We set the image source. 
+        // onerror="this.parentElement.style.display='none'" hides the box if image doesn't exist
+        const imgPath = `images/${folderName}/${i}`;
+        
+        // We create an image that tries to load. 
+        // Since we don't know if it's .jpg or .png, we default to .jpg for simplicity.
+        // *Best Practice: Rename all your gallery photos to 1.jpg, 2.jpg...*
+        const img = document.createElement('img');
+        img.src = `${imgPath}.jpg`; // ASSUMES .jpg extension
+        img.onerror = function() { 
+            // If .jpg fails, try .jpeg, if that fails, hide it.
+            this.src = `${imgPath}.jpeg`;
+            this.onerror = function() { this.parentElement.style.display = 'none'; }
+        };
+
+        // Click to Open Zoom Lightbox WITH NAVIGATION
+        wrapper.onclick = () => {
+            // 1. Collect all VISIBLE images in the grid
+            // (We filter out any that failed to load and are hidden)
+            const allImages = document.querySelectorAll('#service-gallery-grid .service-photo-item:not([style*="display: none"]) img');
+            
+            // 2. Save them to our global list
+            lightboxImages = Array.from(allImages).map(img => img.src);
+            
+            // 3. Find the index of the clicked image
+            // We compare source URLs to find which one was clicked
+            currentLightboxIndex = lightboxImages.findIndex(src => src === img.src);
+            
+            // 4. Open Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightbox.style.display = "flex";
+            lightboxImg.src = lightboxImages[currentLightboxIndex];
+        };
+
+        wrapper.appendChild(img);
+        grid.appendChild(wrapper);
+    }
+}
+
+// Close Button Logic
+document.querySelector('.close-service-modal').addEventListener('click', () => {
+    document.getElementById('service-modal').style.display = "none";
+    document.body.style.overflow = "auto"; // Re-enable scrolling
+});
 function loadContent() {
     const config = siteConfig;
 
@@ -47,15 +153,14 @@ function loadContent() {
         statsContainer.appendChild(span);
     });
 
-    // 3. SERVICES (Fixed Structure + Interactive Button)
+    // 3. SERVICES
     const servicesGrid = document.getElementById('services-grid');
-    servicesGrid.innerHTML = ''; // Clear existing
+    servicesGrid.innerHTML = ''; 
     
     config.services.forEach(service => {
         const card = document.createElement('div');
         card.className = 'service-card';
         
-        // This structure now matches your style.css perfectly
         card.innerHTML = `
             <div class="img-wrapper">
                 <img src="${service.image}" alt="${service.title}">
@@ -64,7 +169,7 @@ function loadContent() {
                 <h3>${service.title}</h3>
                 <p>${service.desc}</p>
                 <div class="card-action">
-                    <span class="price-tag">${service.price}</span>
+                    <button class="btn-card" onclick="openServiceGallery('${service.folderName}', '${service.title}')" style="margin-right:10px; background: transparent; border: 1px solid #d4af37; color: #d4af37;">View Gallery</button>
                     <a href="#contact" class="btn-card" onclick="prefillForm('${service.title}')">Book This</a>
                 </div>
             </div>
