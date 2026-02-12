@@ -47,7 +47,7 @@ const siteConfig = {
         // Place a portrait named 'profile.jpg' in your folder
         image: "images/Yash.jpeg",
         bio: "I am an enthusiastic photographer passionate about storytelling through images. My style blends cinematic flair with candid emotion. Whether it's the roar of a music festival or the quiet intimacy of a wedding, I am there to capture the moment perfectly.",
-        stats: ["7+ Years Experience", "700+ Projects", "Cinematic Style"]
+        stats: ["8+ Years Experience", "700+ Projects", "Cinematic Style"]
     },
 
     
@@ -160,3 +160,4 @@ const siteConfig = {
     ]
 
 };
+
